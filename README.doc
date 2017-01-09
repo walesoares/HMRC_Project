@@ -1,0 +1,50 @@
+# HMRC_Project
+
+Notes
+ I have been able to automate the following two test
+ 
+•	Check you can sign up for a new account
+•	Check you can create a new snippet
+
+I have created the automation framework using page object model, as detailed below. The choice of is to allow easy understanding and good presentation of code.
+1.	Created a Base package, and created a Driver class under it. This I use to tell my test which Webdriver driver, url page and browser to use. 
+
+2.	Created to Page package and created the below pages as classes under the package. I created a constructor on each page to enable me call the methods in each page for my test.  For each class page, I created available web element objects using various locators and also declared their functions.  
+
+
+•	Starting Page
+•	Home Page
+•	Signup Page
+•	Sign up Landing page
+•	Snippet page
+•	Snippet Landing page
+
+3.	Create a package called testcases, and TestRun as a class under this package.
+
+  •	Extends the class to the Driver Class to inherit all the variable and methods
+  •	Created object of each class in (no 2) and used that to call each method in the class 
+  •	Used TESTNG annotation to determine which test should be run first and second 
+  •	Used TESTNG assertion to confirm expected results of my test.
+
+Manual Steps
+	Test to check you can sign up a new account
+
+Steps     	Description                 	Expected Results
+1.  	Click on Agree and Start	          Page should go to a new Landing page
+2.	Click on Sign Up Button              	User name and pw field should appear
+3.	Enter Username 	                      Username is displayed
+4.	Enter Password	                      Password is entered
+5.	Click Create	                        Account is created
+
+
+	Test to check you can Create a new Snippet
+
+Steps 	Description	                         Expected Results
+1.	    Click on Home Button 	                Takes user to a Home page
+2.	   Click on New Snippet	                  Add a new Snippet box is displayed
+3.  	 Enter Snippet name in the box	        Snippet name is displayed
+4.	   Click Submit	                          Snippet name entered is displayed
+
+
+Bug 
+When a new user wants to create a new account and user enters a (username), password field is left blank and click Create account. Account Created message is displayed
